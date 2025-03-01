@@ -10,7 +10,7 @@
   </head>
   <body>
   <header class="container-fluid d-flex justify-content-center align-items-center flex-column sfondo">
-  <h1 class="text-center"><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/250224/30a640968c97eb269555cde702289537.png" alt="pokemon-font" border="0"></a></h1>
+  <h1 class="text-center"><img src="https://fontmeme.com/permalink/250224/30a640968c97eb269555cde702289537.png" alt="pokemon-font" border="0"></h1>
     <div class="container-fluid d-flex justify-content-center align-items-center p1">
         <a href="{{ route('register') }}"><button class="m1">Registrati</button></a>
         <a href="{{ route('login') }}"><button class="m2">Accedi</button></a>

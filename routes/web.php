@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PokemonController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,18 @@ Route::get('/logout', [LogoutController::class, 'logout'])->name('logout'); // R
 Route::get('/home', function () {
     return view('homepage');
 })->name('home');
+
+Route::get('/pokemon', function(){
+    return view('pokemon');
+})->name('pokemon');
+
+Route::get('/contat-us', function(){
+    return view('contat-us');
+})->name('contat-us');
+
+Route::get('/primaGen', function(){
+    return view('primagen');
+})->name('primaGen');
+
+Route::get('/pokemon', [PokemonController::class, 'index']);
+

@@ -1,5 +1,5 @@
 // Tempo massimo di inattività in millisecondi (15 minuti = 180000 ms)
-var maxInactivityTime = 900000;
+var maxInactivityTime = 10000;
 
 // Tempo di countdown in millisecondi (5 secondi)
 var countdownTime = 5000;
