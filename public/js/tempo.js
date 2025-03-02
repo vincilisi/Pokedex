@@ -14,12 +14,30 @@ function getLogoutUrl() {
 }
 
 // Funzione per resettare il timer di inattività
+// Funzione per resettare il timer di inattività
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer);
     clearTimeout(countdownTimer);
-    document.getElementById('countdown').style.display = 'none';
+
+    var countdownElement = document.getElementById('countdown');
+    if (countdownElement) {
+        countdownElement.style.display = 'none';
+    } else {
+        console.warn("Elemento 'countdown' non trovato nel DOM");
+    }
+    
+    // Aggiungi qui l'operazione sull'elemento
+    var element = document.getElementById("idElemento"); // Cambia "idElemento" con l'ID effettivo del tuo elemento
+    if (element) {
+        // Esegui le operazioni sull'elemento
+        element.style.someProperty = "someValue"; // Cambia "someProperty" e "someValue" con le proprietà e i valori effettivi
+    } else {
+        console.warn("Elemento non trovato nel DOM");
+    }
+
     inactivityTimer = setTimeout(startCountdown, maxInactivityTime - countdownTime);
 }
+
 
 // Funzione per avviare il countdown
 function startCountdown() {
@@ -33,14 +51,23 @@ function startCountdown() {
         countdownElement.innerText = 'Logout tra ' + timeLeft + ' secondi';
         if (timeLeft <= 0) {
             clearInterval(countdownTimer);
-            logoutUser();
+            redirectTo404(); // Cambia questa funzione
         }
     }, 1000);
 }
 
+// Funzione per reindirizzare alla pagina 404
+function redirectTo404() {
+    window.location.href = '/404'; // Assumi che tu abbia una pagina 404 configurata
+}
+
 // Funzione per effettuare il logout dell'utente
 function logoutUser() {
-    window.location.href = getLogoutUrl(); // Usa la funzione per ottenere l'URL di logout
+    var logoutUrl = getLogoutUrl();
+    if (window.location.href.endsWith('/404')) {
+        alert('Sessione scaduta. Ricarica la pagina per effettuare il login.');
+        window.location.href = logoutUrl; // Reindirizza al login
+    }
 }
 
 // Eventi per resettare il timer di inattività

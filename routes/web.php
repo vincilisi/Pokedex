@@ -24,7 +24,6 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout'); // Rimuovi questa rotta dopo i test
 
-
 Route::get('/home', function () {
     return view('homepage');
 })->name('home');
@@ -43,3 +42,7 @@ Route::get('/primaGen', function(){
 
 Route::get('/pokemon', [PokemonController::class, 'index']);
 
+// Rotta fallback per la pagina 404
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

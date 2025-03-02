@@ -79,12 +79,13 @@
 
 
 
-    <!-- <form method="POST" action="{{ route('logout') }}">
+    <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit">Logout</button>
     </form> 
 
-     <div id="countdown">Logout tra 5 secondi</div> -->
+    <div id="countdown" style="display:none;"></div>
+
 
 
 
