@@ -222,3 +222,10 @@ body {
     width: 100%;
     height: auto;
 }
+.pokemon-card {
+    max-width: 150px; /* Modifica la larghezza della card */
+  }
+  .pokemon-card .card-img-top {
+    height: 125px; /* Regola l'altezza dell'immagine */
+    object-fit: cover;
+  }
